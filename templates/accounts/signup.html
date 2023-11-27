@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% extends "base.html" %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <title> signup </title>
+</head>
+
+<form method="post" action="{% url 'accounts:signup' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <input type="submit" value="signup">
+</form>
+{% endblock %}
+
+</html>
