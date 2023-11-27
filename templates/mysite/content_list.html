@@ -1,22 +1,7 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="ko">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Small Business - Start Bootstrap Template</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link rel="stylesheet" type="  text/css" href="{% static 'styles.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
-    </head>
-    <body>
-    {% extends 'base.html' %}
-    {% block content %}
-        <!-- Page Content-->
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Page Content-->
         <div class="container px-4 px-lg-5">
         {% if content_list %}
             {% for content in content_list %}
@@ -26,7 +11,7 @@
                         <div class="col-lg-5">
                             <h1 class="font-weight-light">{{ content.title }}</h1>
                             <h5>{{ content.content}}</h5>
-                            <a class="btn btn-primary" href="#!">
+                            <a class="btn btn-primary" href="/mysite/{{ content.id }}/">
                                 상품 상세보기
                             </a>
                         </div>
@@ -36,6 +21,4 @@
                 <p>content가 없습니다.</p>
             {% endif %}
         </div>
-    {% endblock %}
-    </body>
-</html>
+{% endblock %}
