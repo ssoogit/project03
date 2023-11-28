@@ -7,13 +7,22 @@
     <meta charset="UTF-8">
     <title> signup </title>
 </head>
-
-<form method="post" action="{% url 'accounts:signup' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-
-    <input type="submit" value="signup">
-</form>
+<br><br><br><br><br><br><br><br>
+<div align="center">
+    <form method="post" action="{% url 'accounts:signup' %}" >
+        <fieldset style="width:1000px" >
+            <legend> 회원가입 </legend>
+            <br><br><br>
+            <div align="left">
+                {% csrf_token %}
+                {{ form.as_p }}
+            </div>
+            <br>
+            <input type="submit" value="signup">
+        </fieldset>
+    </form>
+    <br><br><br><br><br><br>
+</div>
 {% endblock %}
 
 </html>

@@ -7,15 +7,16 @@
             {% for content in content_list %}
             <!-- Heading Row-->
                     <div class="row gx-4 gx-lg-5 align-items-center my-5">
-                        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="..." /></div>
-                        <div class="col-lg-5">
+                        <div class="col-lg-7"><br><br><br><br><br><br><br><br><br><br><br><br><br><img class="img-fluid rounded mb-4 mb-lg-0" src="/static/image/image 1.png" width="500"  alt="..." /></div>
+                        <div class="col-lg-5"><br><br><br><br><br><br><br><br><br><br><br><br><br>
                             <h1 class="font-weight-light">{{ content.title }}</h1>
-                            <h5>{{ content.content | truncatewords:30}}</h5>
+                            <h5>{{ content.content | truncatewords:5}}</h5>
                             <a class="btn btn-primary" href="{% url 'detail' content.id %}">
                                 상품 상세보기
                             </a>
                         </div>
                     </div>
+            <br><br><br>
             {% endfor %}
             {% else %}
                 <p>content가 없습니다.</p>
