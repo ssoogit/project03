@@ -12,27 +12,35 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link rel="stylesheet" type="  text/css" href="{% static 'styles.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+        <style>
+            fieldset {
+                width : 350px;
+                padding : 20px;
+                padding-bottom : 30px;
+                padding-right : 30px;
+                border : 3px solid;
+            }
+        </style>
     </head>
-    <body>
+    <body id = "page-top">
     <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container px-5">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/company/">Company Info</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/mysite/">Product</a></li>
+    <nav class="navbar navbar-expand-lg bg-white fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="/static/image/RRoom.png" width="300" height="70"></a>
+                <div class="collapse navbar-collapse " id="navbarResponsive" >
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-black" href="/" >독서실소개</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-black" href="/serv/">독서실서비스</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-black" href="/info/">독서실안내</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-black" href="/mysite/">자리예약</a></li>
                         {% if user.is_authenticated %}
-                        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:logout' %}">{{ user.username }} (logout)</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-black" href="{% url 'accounts:logout' %}">{{ user.username }} (로그아웃)</a></li>
                         {% else %}
-                        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:login' %}">login</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger text-black" href="{% url 'accounts:login' %}">로그인</a></li>
                         {% endif %}
                     </ul>
                 </div>
             </div>
         </nav>
-
     </body>
 </html>
