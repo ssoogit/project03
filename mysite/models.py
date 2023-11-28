@@ -9,6 +9,7 @@ class MainContent(models.Model):
         return self.title
 
 
+
 class Comment(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     content_list = models.ForeignKey(MainContent, on_delete=models.CASCADE)
