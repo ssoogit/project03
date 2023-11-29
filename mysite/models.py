@@ -16,3 +16,9 @@ class Comment(models.Model):
     content = models.TextField()
     create_date = models.DateTimeField(auto_now_add=True)
     modify_date = models.DateTimeField(auto_now=True)
+
+class MyModel(models.Model):
+    title = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='images/')  # 'images/'는 이미지가 저장될 경로입니다.
+    def __str__(self):
+        return self.title
